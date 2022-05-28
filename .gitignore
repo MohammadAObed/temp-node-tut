@@ -1,2 +1,2 @@
 /node_modules
-//this file (contains the files to ignore from git) is created so we dont push the modules (bcz they big size) to github
+#this file (contains the files to ignore from git) is created so we dont push the modules (bcz they big size) to github
