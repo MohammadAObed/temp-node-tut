@@ -1,3 +1,5 @@
+//all course slides available on course-api.com
+
 Shortcuts:
 terminal: ctrl `, 
 
@@ -56,3 +58,6 @@ remember: built-in modules has alot of methods, and most of them not covered her
  reusable code: a package (or module or dependencies), folder contain js code.
 
  most of time you have to sniff out or delete the useless packages (packages u wont use) that comes with the whole package u use.
+
+
+ //all course slides available on course-api.com
