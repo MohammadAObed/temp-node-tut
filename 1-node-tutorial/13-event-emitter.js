@@ -1,4 +1,4 @@
-//events a core building blocks in node
+//events are core building blocks in node
 //in browser app the events (like button click or hover (gui, user interface)) are external, 
 //ths style of programming is called event-driven programming
 

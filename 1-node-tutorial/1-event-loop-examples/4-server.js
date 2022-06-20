@@ -1,6 +1,6 @@
 const http = require('http');
 
-const server = http.createServer((re,res) => {
+const server = http.createServer((req,res) => {
     console.log('request event');
     res.end('hello world');
 }); //obviuously you create a server after you are listening on a port, so thats why console logging (server listeneing on port : 5000...) comes first in the terminal
