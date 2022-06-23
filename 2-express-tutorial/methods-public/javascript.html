@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./normalize.css" />
+    <link rel="stylesheet" href="./styles.css" />
+    <title>Javascript</title>
+  </head>
+  <body>
+    <nav>
+      <div class="nav-center">
+        <h5>HTTP Methods</h5>
+        <div>
+          <a href="index.html">regular </a>
+          <a href="javascript.html">javascript </a>
+        </div>
+      </div>
+    </nav>
+    <main>
+      <section>
+        <form>
+          <h3>Javascript Form</h3>
+          <div class="form-row">
+            <label for="name"> enter name </label>
+            <input
+              type="text"
+              name="name"  
+              id="name"
+              class="form-input"
+              autocomplete="false"
+            /><!--name: what is coming in with the request-->
+            <small class="form-alert"></small>
+          </div>
+          <button type="submit" class="block submit-btn">submit</button>
+        </form>
+        <div class="result"></div>
+      </section>
+    </main>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"
+      integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ=="
+      crossorigin="anonymous"
+    ></script> <!-- axios, to setup http requests. (provide cleaner api and better err messages) -->
+    <script>
+      const result = document.querySelector('.result')
+
+      const fetchPeople = async () => {
+        try {
+          const { data } = await axios.get('/api/people') //(fetches people from the server) same as app.get (here yes we are just getting the data, url must match the app.get url route)
+          //after app.get, we are sending back the json data, then assiging it in const {data} (remember await performs the task, then the callback function executes, here it executes behind the scenes, returning the json data and assigning it)
+          console.log(data.data);
+          const people = data.data.map((person) => {
+            return `<h5>${person.name}</h5>`
+          })
+          result.innerHTML = people.join('')
+        } catch (error) {
+          result.innerHTML = `<div class="alert alert-danger">Can't Fetch Data</div>`
+        }
+      }
+      fetchPeople()
+      // submit form
+      const btn = document.querySelector('.submit-btn')
+      const input = document.querySelector('.form-input')
+      const formAlert = document.querySelector('.form-alert')
+      btn.addEventListener('click', async (e) => {
+        e.preventDefault()
+        const nameValue = input.value
+
+        try {
+          const { data } = await axios.post('/api/people', { name: nameValue }) //this is axios syntax, it adds the values to the paylod (same as html approach),we should add the functionality needed by adding app.post('/api/people') on ther server side (app.js) to get that payload value
+          //await axios.post, will send form values to payload, then in the callback function, it will assign the data returned from the server to const {data}.  
+          const h5 = document.createElement('h5')
+          h5.textContent = data.person //person property is created on the server (app.js) the res.json in app.post (which is sending back to this file)
+          result.appendChild(h5) 
+        } catch (error) {
+          //data.success
+          // console.log(error.response)
+          formAlert.textContent = error.response.data.msg //msg property is created on the server (app.js) the res.json in app.post (which is sending back to this file).we could just do the err msg here (but no :/)
+        }
+        input.value = ''
+      })
+    </script>
+  </body>
+</html>

@@ -29,7 +29,7 @@ const server = http.createServer((req, res) => {
     res.end()
   }
 
-  //we said that the server will request the files below bcz index.html needs them and they are typed inside it, so the server will request index.html (based on the first if statement '/') and the files aswell so it will invoke the createServer method multiple times and each time we are requesting a different file (style.css, logo.svg...)
+  //we said that the server will request the files below bcz index.html needs them and they are typed inside it, so the server will request index.html (based on the first if statement '/') and the files aswell so it will invoke the createServer method multiple times (maybe?) and each time we are requesting a different file (style.css, logo.svg...)
 
   // styles
   else if (url === '/styles.css') {
