@@ -7,7 +7,7 @@ const {readFile, writeFile} = require('fs').promises;
 
 const start = async () => {
   try {
-    const first = await readFile('./content/first.txt', 'utf8')
+    const first = await readFile('./content/first.txt', 'utf8') //these await lines gets back the result in (then or catch) of promise that is has (reject or resolve)
     const second = await readFile('./content/second.txt', 'utf8')
     await writeFile(
       './content/result-mind-grenade.txt',

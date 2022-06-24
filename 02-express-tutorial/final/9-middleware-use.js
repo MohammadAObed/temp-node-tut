@@ -27,10 +27,16 @@ app.get('/api/products', (req,res)=>{
     res.send('Products')    
 })
 
+
 app.get('/api/items', (req,res)=>{
     console.log(req.user); //bcz we gave access by in authorize.js file
     res.send('Items')    
 })
+
+// app.get('/api/items', [logger,authorize],(req,res)=>{  give logger,authorize only for this route
+//     console.log(req.user);
+//     res.send('Items')    
+// })
 
 app.listen(5000,()=>{
     console.log("server is listening on port 5000....");

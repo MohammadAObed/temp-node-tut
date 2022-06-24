@@ -3,7 +3,8 @@
 
 //MVC Model - View - Controller
 
-//Controllers -> routes -> app.js -> frontend    //BEST EXPLANATION
+//request: view -> app.js -> routes -> controllers -> Models (database)
+//response: Models -> Controllers -> routes -> app.js -> View    //BEST EXPLANATION
 
 const express = require('express')
 const app = express()
@@ -24,3 +25,6 @@ app.use('/login', auth)
 app.listen(5000, () => {
   console.log('Server is listening on port 5000....')
 })
+
+
+

@@ -5,7 +5,7 @@
 //what about server-side, node js uses event-driven heavily
 //its about executing functions when events happen
 
-//the code below is silly and basic, but dont let this fool you!, alot of modules uses events
+//the code below is silly and basic, but dont let this fool you!, alot of modules use events
 
 const EventEmitter = require('events'); //its a class
 

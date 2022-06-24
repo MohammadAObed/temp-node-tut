@@ -20,6 +20,7 @@
 // npm init (step by step, press enter to skip)
 
 // npm init -y (everything default)
+//npm install
 
 //package.json: has info about our project, and has our dependencies
 

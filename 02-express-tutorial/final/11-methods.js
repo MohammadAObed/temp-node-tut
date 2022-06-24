@@ -7,7 +7,7 @@
 //https://expressjs.com/en/api.html#express.urlencoded
 //https://expressjs.com/en/api.html#express.json
 
-//for post: two flavors, 1st: html, 2nd: javscript, (sending values using: 1- using forms, 2- using pure frontend javascript)
+//for post: two flavors, 1st: html, 2nd: javscript, (sending values using: 1- using forms, 2- using frontend javascript)
 
 const express = require('express')
 const app = express()
@@ -24,7 +24,7 @@ app.use(express.static('./methods-public'));
 app.use(express.urlencoded({extended: false})); //because the request type is application/x-www-form-urlencoded 
 
 //parse json 
-app.use(express.json()); //because the request content type is application/json, it gives the req.body the info inside payload.
+app.use(express.json()); //because the request content type is application/json, it gives the req.body the info inside payload that is from the request header.
 
 //using one of the two approaches above (html or javascript) now we have access to form values (such as input value, etc...)
 //How? keyword: payload, we use this because the html form tag or javascript axios sends the form values in payloads, and express.urlencoded & express.json deals with payloads (bcs request content type are the same as those)...  (go to app.post)

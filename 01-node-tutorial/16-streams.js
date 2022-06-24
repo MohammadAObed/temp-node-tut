@@ -16,7 +16,7 @@ const stream = createReadStream('./content/big.txt', {
 
 // default 64kb
 // last buffer - reminder
-// const stream =  createReadStream('./content/big.txt', {higherWaterMark: 90000}); -control the size of buffer (90kb)
+// const stream =  createReadStream('./content/big.txt', {higherWaterMark: 90000}); -control the size of buffer (90kb chunks)
 // const stream = createReadStream('./content/big.txt', {encoding:'utf8'});
 
 stream.on('data',(result)=>{
