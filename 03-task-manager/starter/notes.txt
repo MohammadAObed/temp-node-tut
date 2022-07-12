@@ -1,0 +1,7 @@
+//NOTE: Man! the docs really help you learn, they have everything, and explanation, go to them
+//go to the files to learn further
+
+//create the routes & controllers folders, do the stuff in app.js.
+//create db folder, create connect.js file
+//create .env folder, (return back to connect.js to learn further)
+//create models folder to be able to communicate with database, file.js (name of a single document convention (ex: Task.js))
